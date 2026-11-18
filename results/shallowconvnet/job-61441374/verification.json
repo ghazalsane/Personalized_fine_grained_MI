@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "job_id": 61441374,
+  "subjects": 18,
+  "pairs": 28,
+  "windows_ms": [
+    800,
+    1500,
+    3000,
+    4000
+  ],
+  "subject_pair_window_rows": 2016,
+  "fold_rows": 10080,
+  "original_metric_files_checked": 115,
+  "copied_summary_csvs_byte_identical": true,
+  "numerical_comparison_atol": 1e-12,
+  "numerical_comparison_rtol": 0,
+  "per_pair_subject_and_fold_values_compared_exactly": true,
+  "source_sha256": "e2ea42c2db7f0861caaaece7042bd81c69fd54b9555b3b6dbdb90db7463fec2e",
+  "notes": "Checks against original outputs do not establish independent scientific replication."
+}

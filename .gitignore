@@ -1,0 +1,17 @@
+# Keep research inputs and binary checkpoints outside this repository.
+*.npz
+*.npy
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.tar.gz
+*.bundle
+__pycache__/
+*.py[cod]
+.venv/
+datasetpaper_4_40hz_MIonly/
+mi_cmp_baseline/
+logs/
+checkpoints/
+.cache/

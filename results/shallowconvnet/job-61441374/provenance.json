@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "experiment": "ShallowConvNet within-subject binary joint-pair baseline",
+  "training_job": {
+    "id": 61441374,
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 20787,
+    "elapsed": "05:46:27",
+    "training_python_step_seconds": 20772,
+    "pair_loop_minutes_reported": 346.1
+  },
+  "validation_job": {
+    "id": 61441331,
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 30,
+    "all_18_datasets_finite": true,
+    "all_pair_splits_checked": true,
+    "deterministic_cuda_forward_backward_all_four_windows": true,
+    "synthetic_checkpoint_reuse_test_passed": true
+  },
+  "hardware": {
+    "system": "NERSC Perlmutter",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "gpus": 1,
+    "gpu_memory_gb": 40,
+    "account": "m4431_g",
+    "requested_qos": "shared",
+    "resolved_qos": "gpu_shared",
+    "constraint": "gpu&hbm40g",
+    "nodes": 1,
+    "tasks": 1,
+    "logical_cpus": 32,
+    "physical_cores": 16,
+    "host_memory_gib": 55,
+    "cpu_binding": "cores",
+    "cpu_library_threads": 16,
+    "walltime_limit_hours": 48
+  },
+  "software": {
+    "module": "pytorch/2.8.0",
+    "python": "3.12.11",
+    "packages": {
+      "torch": "2.8.0+cu129",
+      "numpy": "2.1.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.16.2",
+      "joblib": "1.5.2",
+      "threadpoolctl": "3.6.0"
+    },
+    "cuda": "12.9",
+    "cudnn_numeric": 91002
+  },
+  "data_description": {
+    "folder": "datasetpaper_4_40hz_MIonly",
+    "subject_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "trials_per_subject": 320,
+    "channels": 62,
+    "samples_per_trial": 1000,
+    "sampling_rate_hz": 250,
+    "provided_bandpass_hz": [
+      4,
+      40
+    ],
+    "classes": 8,
+    "trials_per_class_per_subject": 40,
+    "dataset_files_included": false
+  },
+  "experiment_design": {
+    "pairs": 28,
+    "windows_ms": [
+      800,
+      1500,
+      3000,
+      4000
+    ],
+    "windows_samples": [
+      200,
+      375,
+      750,
+      1000
+    ],
+    "folds": 5,
+    "epochs": 50,
+    "batch_size": 32,
+    "seed": 42,
+    "noise_level": 0.15,
+    "model_fits": 10080,
+    "total_training_epochs": 504000,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "ReduceLROnPlateau(mode=min,factor=0.5,patience=5)",
+    "selection": "Best validation accuracy, ties resolved by lower validation loss"
+  },
+  "determinism": {
+    "PYTHONHASHSEED": "42",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "use_deterministic_algorithms": true,
+    "warn_only": false,
+    "fold_seed": "42 + subject_id",
+    "augmentation_seed": "42 + subject_id + fold_index + window_index * 100",
+    "model_and_loader_seed": "42 + subject_id * 1000 + fold_index * 100 + window_index",
+    "indices": "Fold and window indices are zero-based in these formulas"
+  },
+  "source": {
+    "repository": "ghazalsane/Personalized_fine_grained_MI",
+    "commit": "b80ade97621197fb5e29994cdfb8045cf15f8471",
+    "script": "run_shallow_all.py",
+    "sha256": "e2ea42c2db7f0861caaaece7042bd81c69fd54b9555b3b6dbdb90db7463fec2e",
+    "training_scripts_sha256": {
+      "run_shallow_all.py": "e2ea42c2db7f0861caaaece7042bd81c69fd54b9555b3b6dbdb90db7463fec2e",
+      "run_personalized.py": "1b1dcbee47dd7c5a37cab713bc30dc8d38c5e7d50bb5639555bb0572ba1eea99"
+    }
+  },
+  "publication": {
+    "plotting_packages": {
+      "matplotlib": "3.10.6",
+      "numpy": "2.1.2",
+      "pandas": "2.3.3"
+    },
+    "uncertainty": "Descriptive sample SD across 18 subject means after averaging 28 pairs; no confidence intervals or significance tests"
+  }
+}
