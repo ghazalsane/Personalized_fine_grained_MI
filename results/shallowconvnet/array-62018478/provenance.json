@@ -1,0 +1,35 @@
+{
+  "array_job_id": 62018478,
+  "reference_job": 61441374,
+  "seeds": [
+    100042,
+    200042,
+    300042
+  ],
+  "state": "COMPLETED",
+  "exit_codes": [
+    "0:0",
+    "0:0",
+    "0:0"
+  ],
+  "elapsed": [
+    "05:46:42",
+    "05:47:06",
+    "05:47:14"
+  ],
+  "account": "m4431_g",
+  "requested_qos": "shared",
+  "resolved_qos": "gpu_shared",
+  "constraint": "gpu&hbm40g",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "gpu_count_per_task": 1,
+  "cpus_per_task": 32,
+  "memory_per_task_GiB": 55,
+  "time_limit": "08:00:00",
+  "source_sha256": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8",
+  "python": "3.12.11",
+  "torch": "2.8.0+cu129",
+  "cuda": "12.9",
+  "cudnn": "9.10.2",
+  "folds": "42 + subject_id, unchanged across training seeds"
+}

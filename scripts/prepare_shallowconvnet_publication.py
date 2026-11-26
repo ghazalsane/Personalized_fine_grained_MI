@@ -30,6 +30,16 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+
+def recorded_training_source(name):
+    # New training seeds update the root script; verify the historical run
+    # against its byte-identical archived source instead.
+    archived = REPO / 'results/shallowconvnet/array-62018478/source/run_shallow_all_seed42.py'
+    if name == 'run_shallow_all.py' and archived.is_file():
+        return archived
+    return REPO / name
+
+
 def read(path, **kwargs):
     return pd.read_csv(path, float_precision='round_trip', **kwargs)
 
@@ -84,7 +94,7 @@ def load_tables():
 def check_originals(source, data, folds):
     manifest_path = OUTPUT / 'original_output_sha256.json'
     files = {name: sha(source / name) for name in SOURCE_CSVS}
-    check(sha(REPO / 'run_shallow_all.py') == SOURCE_SHA, 'Training source changed.')
+    check(sha(recorded_training_source('run_shallow_all.py')) == SOURCE_SHA, 'Training source changed.')
     for name in SOURCE_CSVS:
         check(sha(source / name) == sha(OUTPUT / 'tables' / name),
               'Copied summary is not byte-identical: ' + name)
@@ -241,7 +251,7 @@ def main():
     args = parser.parse_args()
     source = json.loads((OUTPUT / 'provenance.json').read_text())['source']
     for name, digest in source['training_scripts_sha256'].items():
-        check(sha(REPO / name) == digest, 'Original training script changed: ' + name)
+        check(sha(recorded_training_source(name)) == digest, 'Original training script changed: ' + name)
     if args.source_results and not args.verify_only:
         for name in SOURCE_CSVS:
             shutil.copyfile(args.source_results / name, OUTPUT / 'tables' / name)
@@ -254,7 +264,7 @@ def main():
         source_count = check_originals(args.source_results, data, folds)
     if args.verify_only:
         check_derived(subject)
-        check(sha(REPO / 'run_shallow_all.py') == SOURCE_SHA, 'Training source changed.')
+        check(sha(recorded_training_source('run_shallow_all.py')) == SOURCE_SHA, 'Training source changed.')
         manifest(verify=True)
         print('PASS: table coverage, fold pooling, original summaries, derived summaries and artifact hashes.')
     else:

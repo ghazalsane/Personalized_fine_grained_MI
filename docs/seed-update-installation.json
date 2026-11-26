@@ -1,0 +1,11 @@
+{
+  "backup_directory": "/global/homes/a/anis/backups/shallowconvnet/pre-seed-update-20261126T053707Z",
+  "original_sha256": "e2ea42c2db7f0861caaaece7042bd81c69fd54b9555b3b6dbdb90db7463fec2e",
+  "baseline_files": 648,
+  "baseline_bytes": 7267803,
+  "download_sha256": {
+    "run_shallow_all.py": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8",
+    "submit_seeds.sh": "ee147ca82c57c7f7649a5450d905a8dc39007e5589978357167c1db310db2a95",
+    "aggregate_seeds.py": "f997fe488358280e186692df96ec90c55633f9d3567330ae061688c3e4a60540"
+  }
+}

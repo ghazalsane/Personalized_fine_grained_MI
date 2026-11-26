@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "seed": 100042,
+  "source_sha256": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8",
+  "dataset_fingerprint": "f34eb2e3db901b69aff58f005b8a8b6bc0485b8bc4896e1f5b1e7cb204bff072",
+  "environment": {
+    "python": "3.12.11",
+    "packages": {
+      "torch": "2.8.0+cu129",
+      "numpy": "2.1.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.16.2",
+      "joblib": "1.5.2",
+      "threadpoolctl": "3.6.0"
+    },
+    "torch_cuda": "12.9",
+    "cudnn": 91002,
+    "gpu": "NVIDIA A100-SXM4-40GB"
+  }
+}

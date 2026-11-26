@@ -39,7 +39,12 @@ except ImportError:
 # ===========================================================================
 import os
 
-seed = 42
+# Training seed. Default 42 reproduces the original run exactly.
+# For extra seed runs: export MI_SEED=<n> before starting Python.
+# MI_SEED changes ONLY training randomness (weight init, batch order, noise
+# copy). The folds in subject_splits() are pinned to 42 + subject_id and do
+# not depend on it, so every seed is trained and tested on the same trials.
+seed = int(os.environ.get('MI_SEED', '42'))
 os.environ['PYTHONHASHSEED'] = str(seed)
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'  # [P1] before CUDA init
 
@@ -101,7 +106,11 @@ ALL_PAIRS = list(itertools.combinations(range(8), 2))
 # Colab default. On a cluster: export MI_DRIVE_ROOT=/path/to/data
 DRIVE = os.environ.get('MI_DRIVE_ROOT', '/content/drive/MyDrive')
 DATASET_ROOT = f'{DRIVE}/datasetpaper_4_40hz_MIonly'
-RESULTS_ROOT = f'{DRIVE}/mi_cmp_baseline'
+# Each non-default seed gets its own output folder. This matters: the resume
+# logic skips any pair it finds finished, so a new seed pointed at the seed-42
+# folder would silently return the seed-42 results.
+RESULTS_ROOT = (f'{DRIVE}/mi_cmp_baseline' if seed == 42
+                else f'{DRIVE}/mi_cmp_baseline_seed{seed}')
 SAMPLING_RATE = 250
 
 TEST_TIME_WINDOWS_MS = [800, 1500, 3000, 4000]
@@ -119,6 +128,7 @@ print(f"\nModel: ShallowConvNet (dataset-paper baseline)")
 print(f"Data : {DATASET_ROOT}")
 print(f"Out  : {RESULTS_ROOT}")
 print(f"Pairs: {len(ALL_PAIRS)}")
+print(f"Seed : {seed} (training only; folds pinned to 42 + subject_id)")
 print(f"Test time windows: {TEST_TIME_WINDOWS_MS} ms "
       f"({TEST_TIME_WINDOWS_SAMPLES} samples)")
 

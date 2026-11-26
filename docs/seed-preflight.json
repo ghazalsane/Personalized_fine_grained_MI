@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "reference_job": 61441374,
+  "utc": "2026-11-26T05:53:14.424797+00:00",
+  "project_root": "/global/homes/a/anis/shallowconvnet",
+  "backup_directory": "/global/homes/a/anis/backups/shallowconvnet/pre-seed-update-20261126T053707Z",
+  "training_executed": false,
+  "cuda_execution_performed": false,
+  "syntax": "PASS: both Python files, launcher, and inline Python",
+  "training_source": "Exact download; only seed assignment, output assignment, and seed print differ from job 61441374",
+  "historical_scratch_source_unchanged": true,
+  "seeds": [
+    100042,
+    200042,
+    300042
+  ],
+  "separate_fresh_outputs": {
+    "100042": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed100042",
+    "200042": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed200042",
+    "300042": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed300042"
+  },
+  "original_output_not_selected": true,
+  "login_node_guard": "PASS: exit 1 before module load, file writes, or srun",
+  "slurm_request": {
+    "account": "m4431_g",
+    "qos": "shared",
+    "constraint": "gpu&hbm40g",
+    "nodes": "1",
+    "ntasks": "1",
+    "gpus-per-task": "1",
+    "cpus-per-task": "32",
+    "mem": "55G",
+    "time": "08:00:00",
+    "chdir": "/global/homes/a/anis/shallowconvnet"
+  },
+  "shellcheck": "Unavailable; bash -n and targeted launcher checks passed",
+  "environment": {
+    "python": "3.12.11",
+    "packages": {
+      "torch": "2.8.0+cu129",
+      "numpy": "2.1.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.7.2",
+      "scipy": "1.16.2",
+      "joblib": "1.5.2",
+      "threadpoolctl": "3.6.0"
+    },
+    "torch_cuda": "12.9",
+    "cudnn": 91002
+  },
+  "environment_matches_job_61441374": true,
+  "current_modules": [
+    "craype-x86-milan",
+    "libfabric/2.3.1",
+    "craype-network-ofi",
+    "xpmem/2.11.5-1.3_g73ade43320bc",
+    "cray-dsmml/0.3.1",
+    "PrgEnv-gnu/8.7.0",
+    "craype/2.7.36",
+    "perftools-base/26.03.0",
+    "cpe/26.03",
+    "craype-accel-nvidia80",
+    "gpu/1.0",
+    "sqs/2.0",
+    "darshan/default",
+    "gcc-native/13.2",
+    "cudatoolkit/12.9",
+    "nccl/2.24.3",
+    "pytorch/2.8.0",
+    "cray-libsci/26.03.0",
+    "cray-mpich/9.1.0"
+  ],
+  "dataset": {
+    "path": "/pscratch/sd/a/anis/shallowconvnet/data/datasetpaper_4_40hz_MIonly",
+    "subjects": 18,
+    "data_shape_per_subject": [
+      320,
+      62,
+      1000
+    ],
+    "data_dtype": "float32",
+    "labels_dtype": "int64",
+    "class_counts_per_subject": [
+      40,
+      40,
+      40,
+      40,
+      40,
+      40,
+      40,
+      40
+    ],
+    "fingerprint": "f34eb2e3db901b69aff58f005b8a8b6bc0485b8bc4896e1f5b1e7cb204bff072",
+    "matches_previous_job": true,
+    "eeg_payload_loaded": false
+  },
+  "folds": "PASS: all 18 subjects, all 28 pair restrictions, all 5 folds; all three seeds match original train/validation/test indices",
+  "aggregation_tests": {
+    "valid-three-seeds-reordered": "PASS",
+    "original-extra-cell-bug-reproduced": "PASS",
+    "extra-cell-rejected": "PASS",
+    "missing-cell-rejected": "PASS",
+    "duplicate-key-rejected": "PASS",
+    "duplicate-directory-rejected": "PASS",
+    "nan-rejected": "PASS",
+    "test-count-mismatch-rejected": "PASS",
+    "too-few-inputs-rejected": "PASS"
+  },
+  "synthetic_fixture_directory": "/pscratch/sd/a/anis/shallowconvnet/validation/seed-preflight-synthetic-20261126T055316Z",
+  "aggregation_output_location": "baseline_seed_mean.csv in the chosen working directory; use a new scratch aggregation directory",
+  "original_baseline_integrity": {
+    "status": "PASS",
+    "files": 648,
+    "bytes": 7267803,
+    "all_sha256_and_mtimes_unchanged": true
+  },
+  "script_sha256": {
+    "run_shallow_all.py": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8",
+    "submit_seeds.sh": "e8df3facdd1a4136d646bc90c0ddeabd91ee9daf5beb2dcb4f7058fbfa66608b",
+    "aggregate_seeds.py": "53ee16e839d237b8679880ed39ef8e48ee714632dc25c368978a283386ad17fb"
+  },
+  "recommended_time_limit": "08:00:00 per seed",
+  "previous_elapsed": "05:46:27",
+  "headroom": "02:13:33 (38.55%)",
+  "pending": [
+    "Actual CUDA/GPU checks for these jobs occur on compute nodes after explicit submission approval",
+    "The changed seeds have not been trained; scientific results and exact runtime are unmeasured",
+    "No sbatch test-only request was made"
+  ],
+  "no_jobs_submitted_during_validation": true,
+  "stage": "pre_submission_validation_snapshot",
+  "submission_record": "seed-submission.json",
+  "resume_validation_record": "seed-resume-validation.json"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "fixture_directory": "/pscratch/sd/a/anis/shallowconvnet/validation/resume-SYNTHETIC-20261126T055310Z",
+  "tests": {
+    "existing_completed_pair_skipped_without_changes": "PASS",
+    "saved_subject_reloaded_before_synthetic_interruption": "PASS",
+    "interrupted_pair_rebuilt_from_saved_subjects": "PASS",
+    "completed_files_and_checkpoints_hashes_and_mtimes_unchanged": "PASS",
+    "no_model_fitting_or_cuda_execution": "PASS",
+    "fresh_mode_rejects_existing_directory": "PASS",
+    "resume_rejects_changed_identity": "PASS",
+    "original_baseline_path_forbidden": "PASS",
+    "resume_requires_identity_marker": "PASS",
+    "resume_rejects_truncated_completion_marker": "PASS",
+    "resume_refuses_existing_run_summary": "PASS"
+  },
+  "testing_method": "Synthetic checkpoint-only execution of the unchanged run_pair; interruption before constructing a model",
+  "resume_granularity": "Completed subject per pair; an unfinished subject repeats its 4 windows x 5 folds",
+  "source_sha256": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8",
+  "file_sha256": {
+    "submit_seeds.sh": "e8df3facdd1a4136d646bc90c0ddeabd91ee9daf5beb2dcb4f7058fbfa66608b",
+    "scripts/seed_resume.py": "a071aa7b867982890068f6ca326344e21ad5a47a15e68a15f7100c0fc68651f2",
+    "run_shallow_all.py": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8"
+  }
+}

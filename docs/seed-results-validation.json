@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-11-26T17:58:09.385677+00:00",
+  "array_job_id": 62018478,
+  "checks": {
+    "pair_tables_and_metadata": "PASS",
+    "saved_predictions_labels_and_confusion_matrices": "PASS",
+    "fold_to_subject_and_summary_consistency": "PASS",
+    "all_seeds_same_coverage_and_test_counts": "PASS",
+    "source_seed_environment_identity": "PASS",
+    "no_incomplete_or_temporary_checkpoints": "PASS",
+    "logs_no_tracebacks_or_training_warnings": "PASS",
+    "original_baseline_integrity": "PASS"
+  },
+  "runs": {
+    "100042": {
+      "task_id": "62018478_0",
+      "results_root": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed100042",
+      "pairs": 28,
+      "subjects": 18,
+      "subject_pair_window_rows": 2016,
+      "fold_rows": 10080,
+      "checkpoints": 504,
+      "mean_accuracy_percent": {
+        "800": 57.73065476190476,
+        "1500": 58.876488095238095,
+        "3000": 59.176587301587304,
+        "4000": 58.67063492063492
+      },
+      "all_predictions_and_summaries_consistent": true,
+      "gpu_startup": "PASS",
+      "fresh_training_units": 504,
+      "stderr": "Only expected module version reload messages"
+    },
+    "200042": {
+      "task_id": "62018478_1",
+      "results_root": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed200042",
+      "pairs": 28,
+      "subjects": 18,
+      "subject_pair_window_rows": 2016,
+      "fold_rows": 10080,
+      "checkpoints": 504,
+      "mean_accuracy_percent": {
+        "800": 57.87450396825397,
+        "1500": 58.576388888888886,
+        "3000": 59.39980158730159,
+        "4000": 59.05257936507937
+      },
+      "all_predictions_and_summaries_consistent": true,
+      "gpu_startup": "PASS",
+      "fresh_training_units": 504,
+      "stderr": "Only expected module version reload messages"
+    },
+    "300042": {
+      "task_id": "62018478_2",
+      "results_root": "/pscratch/sd/a/anis/shallowconvnet/data/mi_cmp_baseline_seed300042",
+      "pairs": 28,
+      "subjects": 18,
+      "subject_pair_window_rows": 2016,
+      "fold_rows": 10080,
+      "checkpoints": 504,
+      "mean_accuracy_percent": {
+        "800": 57.59920634920635,
+        "1500": 59.104662698412696,
+        "3000": 59.007936507936506,
+        "4000": 59.007936507936506
+      },
+      "all_predictions_and_summaries_consistent": true,
+      "gpu_startup": "PASS",
+      "fresh_training_units": 504,
+      "stderr": "Only expected module version reload messages"
+    }
+  },
+  "results_read_only": true,
+  "no_jobs_submitted_or_modified": true,
+  "original_baseline_unchanged": {
+    "status": "PASS",
+    "files": 648,
+    "all_hashes_sizes_mtimes_match": true
+  },
+  "baseline_seed42_mean_accuracy_percent": {
+    "800": 57.92162698412698,
+    "1500": 58.69047619047619,
+    "3000": 59.49652777777778,
+    "4000": 58.71031746031746
+  },
+  "three_new_seeds_summary": {
+    "800": {
+      "mean_percent": 57.73478835978836,
+      "sample_sd_across_seed_grand_means_pp": 0.13769535118122053,
+      "delta_vs_seed42_pp": -0.18683862433861975
+    },
+    "1500": {
+      "mean_percent": 58.852513227513235,
+      "sample_sd_across_seed_grand_means_pp": 0.26495169402934277,
+      "delta_vs_seed42_pp": 0.1620370370370452
+    },
+    "3000": {
+      "mean_percent": 59.19477513227513,
+      "sample_sd_across_seed_grand_means_pp": 0.19656464075539495,
+      "delta_vs_seed42_pp": -0.3017526455026456
+    },
+    "4000": {
+      "mean_percent": 58.910383597883595,
+      "sample_sd_across_seed_grand_means_pp": 0.2088248485102722,
+      "delta_vs_seed42_pp": 0.20006613756613234
+    }
+  },
+  "all_four_seeds_summary": {
+    "800": {
+      "mean_percent": 57.78149801587302,
+      "sample_sd_across_seed_grand_means_pp": 0.1461751496577546
+    },
+    "1500": {
+      "mean_percent": 58.81200396825396,
+      "sample_sd_across_seed_grand_means_pp": 0.2310056286232316
+    },
+    "3000": {
+      "mean_percent": 59.2702132936508,
+      "sample_sd_across_seed_grand_means_pp": 0.22027733299296362
+    },
+    "4000": {
+      "mean_percent": 58.86036706349206,
+      "sample_sd_across_seed_grand_means_pp": 0.19768280928560777
+    }
+  },
+  "fraction_identical_cells": {
+    "42_vs_100042": 0.08482142857142858,
+    "42_vs_200042": 0.09623015873015874,
+    "42_vs_300042": 0.11408730158730158,
+    "100042_vs_200042": 0.09771825396825397,
+    "100042_vs_300042": 0.09523809523809523,
+    "200042_vs_300042": 0.09375
+  },
+  "accounting": "JobID|State|ExitCode|Elapsed|AllocCPUS|ReqMem|AllocTRES\n62018478_0|COMPLETED|0:0|05:46:42|32|55G|billing=32,cpu=32,energy=26349899,gres/gpu:a100=1,gres/gpu=1,mem=55G,node=1\n62018478_1|COMPLETED|0:0|05:47:06|32|55G|billing=32,cpu=32,energy=26591619,gres/gpu:a100=1,gres/gpu=1,mem=55G,node=1\n62018478_2|COMPLETED|0:0|05:47:14|32|55G|billing=32,cpu=32,energy=28101859,gres/gpu:a100=1,gres/gpu=1,mem=55G,node=1\n"
+}

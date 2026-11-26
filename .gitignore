@@ -15,3 +15,11 @@ mi_cmp_baseline/
 logs/
 checkpoints/
 .cache/
+
+# Perlmutter runtime outputs stay outside Git.
+*.out
+*.err
+validation/
+cache/
+envs/
+.DS_Store

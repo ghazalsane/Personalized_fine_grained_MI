@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "seeds": [
+    100042,
+    200042,
+    300042
+  ],
+  "copied_source_files_per_seed": 116,
+  "rows_per_seed": 2016,
+  "folds_per_seed": 10080,
+  "all_seed_rows": 8064,
+  "source_csv_and_json_byte_identical": true,
+  "per_pair_and_root_summaries_consistent": true,
+  "numeric_tolerance_absolute_percentage_points": 1e-12,
+  "original_baseline_preserved": true,
+  "checkpoint_prediction_validation": "../../../docs/seed-results-validation.json"
+}

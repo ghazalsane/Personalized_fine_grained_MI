@@ -1,0 +1,107 @@
+{
+  "array_job_id": "62018478",
+  "task_ids": [
+    "62018478_0",
+    "62018478_1",
+    "62018478_2"
+  ],
+  "seeds": [
+    100042,
+    200042,
+    300042
+  ],
+  "submitted_utc": "2026-11-26T05:53:50.892144+00:00",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--export=ALL,MI_RESUME=0",
+    "/global/homes/a/anis/shallowconvnet/submit_seeds.sh"
+  ],
+  "requested_resources": {
+    "account": "m4431_g",
+    "qos": "shared",
+    "constraint": "gpu&hbm40g",
+    "nodes": "1",
+    "ntasks": "1",
+    "gpus-per-task": "1",
+    "cpus-per-task": "32",
+    "mem": "55G",
+    "time": "08:00:00",
+    "chdir": "/global/homes/a/anis/shallowconvnet"
+  },
+  "script_sha256": {
+    "submit_seeds.sh": "e8df3facdd1a4136d646bc90c0ddeabd91ee9daf5beb2dcb4f7058fbfa66608b",
+    "scripts/seed_resume.py": "a071aa7b867982890068f6ca326344e21ad5a47a15e68a15f7100c0fc68651f2",
+    "run_shallow_all.py": "731535d4179164cf46744d638ee052622b72b1e7a529b1aa2dda4bc62f3a2af8"
+  },
+  "resume_validation": "PASS",
+  "original_baseline_integrity": {
+    "status": "PASS",
+    "files": 648,
+    "bytes": 7267803,
+    "all_sha256_and_mtimes_unchanged": true
+  },
+  "verified_utc": "2026-11-26T05:56:00.096889+00:00",
+  "tasks": [
+    {
+      "task_id": "62018478_0",
+      "slurm_job_id": "62018481",
+      "seed": 100042,
+      "state": "PENDING",
+      "reason": "None",
+      "partition": "shared_gpu_ss11",
+      "account": "m4431_g",
+      "qos": "gpu_shared",
+      "requested_tres": "cpu=32,mem=55G,node=1,billing=32,gres/gpu=1",
+      "allocated_tres": "(null)",
+      "node_list": "",
+      "time_limit": "08:00:00",
+      "stdout": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_0.out",
+      "stderr": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_0.err",
+      "artifact_directory": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_0",
+      "raw_scontrol": "JobId=62018481 ArrayJobId=62018478 ArrayTaskId=0 JobName=shallow_seeds UserId=anis(115629) GroupId=anis(115629) MCS_label=N/A Priority=67679 Nice=0 Account=m4431_g QOS=gpu_shared JobState=PENDING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A SubmitTime=2026-11-25T21:53:50 EligibleTime=2026-11-25T21:53:51 AccrueTime=2026-11-25T21:53:53 StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-25T21:55:08 Scheduler=Main Partition=shared_gpu_ss11 AllocNode:Sid=login13:1056607 ReqNodeList=(null) ExcNodeList=(null) NodeList= StepMgrEnabled=Yes NumNodes=1-1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=32,mem=55G,node=1,billing=32,gres/gpu=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=* MinCPUsNode=32 MinMemoryNode=55G MinTmpDiskNode=0 Features=gpu&a100&hbm40g DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/global/homes/a/anis/shallowconvnet/submit_seeds.sh SubmitLine=sbatch --parsable --export=ALL,MI_RESUME=0 /global/homes/a/anis/shallowconvnet/submit_seeds.sh WorkDir=/global/homes/a/anis/shallowconvnet StdErr=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_0.err StdIn=/dev/null StdOut=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_0.out TresBind=gres/gpu:per_task:1 TresPerNode=gres/gpu:1 TresPerTask=cpu=32,gres/gpu=1\n",
+      "gpu_startup_validation": "Pending compute-node startup"
+    },
+    {
+      "task_id": "62018478_1",
+      "slurm_job_id": "62018482",
+      "seed": 200042,
+      "state": "PENDING",
+      "reason": "None",
+      "partition": "shared_gpu_ss11",
+      "account": "m4431_g",
+      "qos": "gpu_shared",
+      "requested_tres": "cpu=32,mem=55G,node=1,billing=32,gres/gpu=1",
+      "allocated_tres": "(null)",
+      "node_list": "",
+      "time_limit": "08:00:00",
+      "stdout": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_1.out",
+      "stderr": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_1.err",
+      "artifact_directory": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_1",
+      "raw_scontrol": "JobId=62018482 ArrayJobId=62018478 ArrayTaskId=1 JobName=shallow_seeds UserId=anis(115629) GroupId=anis(115629) MCS_label=N/A Priority=67679 Nice=0 Account=m4431_g QOS=gpu_shared JobState=PENDING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A SubmitTime=2026-11-25T21:53:50 EligibleTime=2026-11-25T21:53:51 AccrueTime=2026-11-25T21:53:53 StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-25T21:55:08 Scheduler=Main Partition=shared_gpu_ss11 AllocNode:Sid=login13:1056607 ReqNodeList=(null) ExcNodeList=(null) NodeList= StepMgrEnabled=Yes NumNodes=1-1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=32,mem=55G,node=1,billing=32,gres/gpu=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=* MinCPUsNode=32 MinMemoryNode=55G MinTmpDiskNode=0 Features=gpu&a100&hbm40g DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/global/homes/a/anis/shallowconvnet/submit_seeds.sh SubmitLine=sbatch --parsable --export=ALL,MI_RESUME=0 /global/homes/a/anis/shallowconvnet/submit_seeds.sh WorkDir=/global/homes/a/anis/shallowconvnet StdErr=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_1.err StdIn=/dev/null StdOut=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_1.out TresBind=gres/gpu:per_task:1 TresPerNode=gres/gpu:1 TresPerTask=cpu=32,gres/gpu=1\n",
+      "gpu_startup_validation": "Pending compute-node startup"
+    },
+    {
+      "task_id": "62018478_2",
+      "slurm_job_id": "62018478",
+      "seed": 300042,
+      "state": "PENDING",
+      "reason": "None",
+      "partition": "shared_gpu_ss11",
+      "account": "m4431_g",
+      "qos": "gpu_shared",
+      "requested_tres": "cpu=32,mem=55G,node=1,billing=32,gres/gpu=1",
+      "allocated_tres": "(null)",
+      "node_list": "",
+      "time_limit": "08:00:00",
+      "stdout": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_2.out",
+      "stderr": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_2.err",
+      "artifact_directory": "/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_2",
+      "raw_scontrol": "JobId=62018478 ArrayJobId=62018478 ArrayTaskId=2 JobName=shallow_seeds UserId=anis(115629) GroupId=anis(115629) MCS_label=N/A Priority=67679 Nice=0 Account=m4431_g QOS=gpu_shared JobState=PENDING Reason=None Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A SubmitTime=2026-11-25T21:53:50 EligibleTime=2026-11-25T21:53:51 AccrueTime=Unknown StartTime=Unknown EndTime=Unknown Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-25T21:55:08 Scheduler=Main Partition=shared_gpu_ss11 AllocNode:Sid=login13:1056607 ReqNodeList=(null) ExcNodeList=(null) NodeList= StepMgrEnabled=Yes NumNodes=1-1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=32,mem=55G,node=1,billing=32,gres/gpu=1 AllocTRES=(null) Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=* MinCPUsNode=32 MinMemoryNode=55G MinTmpDiskNode=0 Features=gpu&a100&hbm40g DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=/global/homes/a/anis/shallowconvnet/submit_seeds.sh SubmitLine=sbatch --parsable --export=ALL,MI_RESUME=0 /global/homes/a/anis/shallowconvnet/submit_seeds.sh WorkDir=/global/homes/a/anis/shallowconvnet StdErr=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_2.err StdIn=/dev/null StdOut=/pscratch/sd/a/anis/shallowconvnet/logs/shallow_seed_62018478_2.out TresBind=gres/gpu:per_task:1 TresPerNode=gres/gpu:1 TresPerTask=cpu=32,gres/gpu=1\n",
+      "gpu_startup_validation": "Pending compute-node startup"
+    }
+  ],
+  "raw_squeue": "62018478_0|PENDING|shared_gpu_ss11|m4431_g|gpu_shared|32|55G|gres/gpu:1|(None)\n62018478_1|PENDING|shared_gpu_ss11|m4431_g|gpu_shared|32|55G|gres/gpu:1|(None)\n62018478_2|PENDING|shared_gpu_ss11|m4431_g|gpu_shared|32|55G|gres/gpu:1|(None)\n",
+  "all_three_tasks_verified_queued": true,
+  "baseline_post_submission_integrity": "PASS: all 648 files retain hashes, sizes, and modification times"
+}
